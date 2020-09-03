@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
     case actionType.changeEvent:
       const changeCollection = state.collectionsEvent.map((item) => {
         if (item.id === action.event.id) {
-          return (item = action.event);
+          return (item = { ...action.event, check: false });
         }
         return item;
       });
