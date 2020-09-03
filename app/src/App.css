@@ -1,0 +1,25 @@
+.global {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.category {
+  width: 80%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-card {
+  font-size: 13px;
+  color: rgb(148, 148, 148);
+}
+
+.delete {
+  margin-right: 1rem;
+}
