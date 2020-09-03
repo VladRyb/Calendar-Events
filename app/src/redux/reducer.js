@@ -5,8 +5,9 @@ const initialState = {
     {
       id: 123,
       title: 'Ryba',
-      dateStart: '2020-09-03T18:53',
-      dateEnd: '2020-09-03T18:53',
+      dateStart: '2020-09-04T10:00',
+      dateEnd: '2020-09-04T10:00',
+      check: false,
     },
   ],
 };
@@ -18,7 +19,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         collectionsEvent: [
           ...state.collectionsEvent,
-          { ...action.event, id: Date.now() },
+          { ...action.event, id: Date.now(), check: false },
         ],
       };
     case actionType.delete:
@@ -39,6 +40,17 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         collectionsEvent: changeCollection,
+      };
+    case actionType.check:
+      const checkElem = state.collectionsEvent.map((item) => {
+        if (item.id === action.id) {
+          return (item = { ...item, check: true });
+        }
+        return item;
+      });
+      return {
+        ...state,
+        collectionsEvent: checkElem,
       };
     default:
       return state;

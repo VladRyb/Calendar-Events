@@ -23,3 +23,11 @@
 .delete {
   margin-right: 1rem;
 }
+
+.toast-win {
+  z-index: 999999;
+  position: absolute;
+  width: 100%;
+  top: 1.5rem;
+  left: 1rem;
+}
